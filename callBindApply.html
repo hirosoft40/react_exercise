@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    hello world
+
+    <script>
+    let bob = function (num, str, x){
+        console.log('bob', num, str, this,x);
+        return true;
+    }
+    let bill = {
+        name:'Bill Murray',
+        movie:'Lost in Translation',
+        myMethod: function (fn){
+            // arguments are all arguments passed
+            let a1 = arguments[1]
+            let a2 = arguments[2]
+            let a3 = arguments[2]
+            fn. apply(bill, a1, a2, a3)
+        }
+    }
+
+
+    // this will be "Window object"
+    // bob(1,'hello bob', 'something')
+
+    // bill.myMethod('what it this to be', 'and then arguments')
+    bob.call(bill, 1, 'hello Erick', 'hello Anuj')
+
+    // similar to call but parameters in array
+    bob.apply(bill, [2, 'hello Erick', 'hello Anuj'])
+
+    // bind will put it to variables
+    let bobbie = bob.bind(bill, 1, 'hello Erick', 'hello Anuj')
+
+    </script>
+</body>
+</html>
