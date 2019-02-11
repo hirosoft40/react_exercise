@@ -5,7 +5,6 @@ import Product from './Product';
 class Products extends React.Component {
     constructor(props) {
         super(props);
-
         this.products = this.getProduct()
 
     }
@@ -39,12 +38,20 @@ class Products extends React.Component {
     }
 
     render() {
-        let listProducts = this.products.map(product =>{
-            <Product key={Product.productName} data={product}/>
+        let listProducts = this.products.map(item =>{
+            <Product 
+                key = {item.productName}
+                data = {item}
+            />
+            console.log(item)
+            // <Product 
+            //     key={item.productName} 
+            //     data={item}
+            //      />
         })
         return (
             <div>
-                <ul>{listProducts}</ul>
+              {listProducts}
             </div>
         );
     }
