@@ -9,7 +9,19 @@ A component can be shown inside of another
 <h3>Component Reusability</h3>
 We want to make components that can be easily reused through out application
 <h3>Component Configuration</h3>
-We should be able to cofnigure a comonent when it is created
+We should be able to configure a comonent when it is created
+
+## Creating a reusable Configurable Component
+
+[1] Identify the JSX that appears to be duplicated
+[2] What is the purpose of that block of JSX? Think of a descriptive name for what it does
+[3] Create a new file to house this new component - it should have the same name as the component
+[4] Create a new component in the new file, paste the JSX into it
+[5] Make the new component configurable by using React's 'props' system
+
+## props = properties
+System for passing data from a parent component to a child component
+--> Goal is to customize or configure a child component
 
 == We use a lot of OOP in react===
 class Car {
