@@ -2,6 +2,15 @@ REACT is a library.
 REACT is made for a lot of updates
 jQuery is used to use plugin but you shouldn't because jQuery is DOM heavy.
 
+##Application Overview
+
+<h3>Component Nesting</h3>
+A component can be shown inside of another
+<h3>Component Reusability</h3>
+We want to make components that can be easily reused through out application
+<h3>Component Configuration</h3>
+We should be able to cofnigure a comonent when it is created
+
 == We use a lot of OOP in react===
 class Car {
 constructor(color, make){
@@ -63,3 +72,5 @@ this.setState({ childName: newName});
 
 =======
 When rendered that we get reactElement(Vertual DOM), then react will check a copy of old DOM and compare. That's why we should not update state directly. Then react will update accordingly.
+=======
+keep state in parent app. Then pas infor by props
