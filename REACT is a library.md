@@ -20,8 +20,92 @@ We should be able to configure a comonent when it is created
 [5] Make the new component configurable by using React's 'props' system
 
 ## props = properties
+
 System for passing data from a parent component to a child component
 --> Goal is to customize or configure a child component
+
+## How to decide which Component Style to - first
+
+[1] Functional Components
+Good for simple content
+[2] Class Components
+Good for just about everything else.
+
+- Easier code organization
+- Can use 'state' -> Easier to handle user iput
+- Undestands lifecycle events -> Easier to do things when the app first starts
+
+## Rule of Class Components
+
+Must be a JavaScript Class
+Must extend(subclass) React.Component
+Must define a 'render' method that returns some amount of JSX
+
+## Rule of State
+
+[1] Only usable with class components
+use 'hooks' system for functional component
+[2] Props and States are easy to get mixed up
+[3] 'State' is a JS object that contains data relevant to a singular compponent
+[4] Updating 'state' on a component causes the component to (almost) instantly rerender
+[5] State must be initialized when a component is created
+[6] State can only be updated using the function 'setState'
+
+## Flow
+
+[1] JS file loaded by browser
+[2] Instance of App component is created
+[3] App components 'constructor' function gets called
+[4] State object is created and assigned to the 'this.state' property
+[5] We call geolocation service
+[6] React calls the components render method
+[7] App returns JSX, get rendered to pages as HTML
+...
+[8] get result of geolocation
+[9] We update our state object with a call to 'this.setState'
+[10] React sees that we updated the state of a component
+[11] React calls our 'render' method a second time
+[12] Render method returns some (updated) JSX
+[13] React takes that JSX and updates content on the screen
+
+## Component Lifecycle
+
+[1] Mounting
+constructor //==> DO NOT DO DATA LOADING. STAY SIMPLE
+||
+componentWillMount
+||
+render
+||
+(content visible on screen )
+||
+componentDidMount //==> GOOD PLACE TO DATA LOADING.
+==
+
+[2] Updating : props
+componentWillReceiveProps
+||
+shouldComponentUpdate
+||true \* if false, stop
+componentWillUpdate
+||
+render
+||
+componentDidUpdate
+
+[3] Updating : states
+shouldComponentUpdate
+||true \* if false, stop
+componentWillUpdate
+||
+render
+||
+componentDidUpdate
+
+[4]Unmounting
+componentWillUnmount
+
+##
 
 == We use a lot of OOP in react===
 class Car {
